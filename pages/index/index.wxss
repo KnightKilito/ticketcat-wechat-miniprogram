@@ -1,0 +1,132 @@
+page{
+  overflow-x:hidden;
+  height: auto;
+  background: -webkit-linear-gradient(top,#424656,#e8e9ee);
+}
+
+/* 轮播图样式 */
+.swiper-container{
+  height: 400rpx;
+  border-radius: 40rpx;
+  border-top-left-radius: 60rpx;
+  border-top-right-radius: 60rpx;
+}
+.swiper{
+  border-top-left-radius: 60rpx;
+  border-top-right-radius: 60rpx;
+  height:400rpx;
+  background: -webkit-linear-gradient(top,#424656,#7085ff,#e8e9ee);
+  /* background-color:#424656; */
+}
+.swiper-image{
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  width: 100%;
+  height: 400rpx;
+  /* border-radius: 30rpx; */
+}
+
+/* 标签 */
+.tab-nav{
+  background-color: #e8e9ee;
+}
+.tab{
+  flex: none !important;
+  width: 160rpx;
+}
+.tab-active{
+  color: red !important;
+}
+
+/* 内容 */
+.content{ 
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  width: 100%;
+}
+.item{
+  position: relative;
+  /* overflow: hidden; */
+  width: 97%;
+  height: 320rpx;
+  margin:0 0 15rpx 4rpx;
+  border-radius: 10px;
+  background-color: white;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.image{
+  float: left;
+  height: 280rpx; 
+  width: 190rpx;
+  margin:20rpx 20rpx;
+  border-radius: 20rpx;
+  background: #d7d7d7 !important;
+}
+.title{
+  float: left;
+  font-size: 34rpx;
+  width: 360rpx;
+  font-weight: 600;
+  height: 50rpx; 
+  margin-top: 34rpx;   
+  /* background-color: green; */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.title2{
+  float: left;
+  font-size: 34rpx;
+  width: 360rpx;
+  font-weight: 600;
+  height: 50rpx; 
+  margin-top: 40rpx;   
+  /* background-color: green; */
+}
+.tip{
+  float: left;
+  font-size: 28rpx;
+  margin: 5rpx 0;
+  width: 320rpx;
+  height: 40rpx;
+  /* background-color: lightsalmon; */
+  overflow: hidden;
+  color: grey;
+}
+
+.time{
+  float: left;
+  margin:20rpx 0 0 60rpx; 
+  width: 100% !important;
+  color: gray;
+}
+
+/* item标签 */
+.van-tag{
+  margin-left: 10rpx;
+  /* color: blue !important; */
+}
+.btn{
+  float: right;
+  width: 110rpx;
+  height: 50rpx;
+  background-color: orangered;
+  color: white;
+  top: -100rpx;
+  right: 40rpx;
+  font-size: 22rpx;
+  line-height: 50rpx;
+  border-radius: 30rpx;
+}
+.btn2{
+  background: #52abf2;
+  top: -100rpx;
+  position: relative;
+}
+
+.placeholder-view {
+  width: 100%;
+  height:100rpx;
+  color: gray;
+  text-align: center;
+}

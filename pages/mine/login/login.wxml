@@ -1,0 +1,105 @@
+<!--pages/mine/login/login.wxml-->
+<van-notify id="van-notify" />
+<view class="v1">
+ 
+ <!-- v2父容器  子view使用绝对布局 -->
+   <view class="v2" hidden="{{!showlogin}}">
+     <view class="dltext">登 录</view>
+  
+     <!-- 手机号 -->
+     <view class="phoneCs">
+      <icon type="phone"></icon>
+       <image src="/icon/icon_mine/UI配色修改.png" class="ph"></image>
+       <input placeholder="请输入用户名/手机/邮箱" bindinput="loginUsername"/>
+     </view>
+  
+     <!-- 密码 -->
+     <view class=passwordCs" wx:if="{{!showpassword}}">
+       <image src="/icon/icon_mine/密码.png" class="ps"></image>
+       <input type="password" placeholder="请输入密码" bindinput="loginPassword" value="{{loginPassword}}"/>
+       <image src="/icon/icon_mine/闭眼睛.png" class="eye" bindtap="changeEye"></image>
+     </view>
+
+     <view class=passwordCs" wx:if="{{showpassword}}">
+       <image src="/icon/icon_mine/密码.png" class="ps"></image>
+       <input placeholder="请输入密码" bindinput="loginPassword" value="{{loginPassword}}"/>
+       <image src="/icon/icon_mine/眼睛.png" class="eye" bindtap="changeEye"></image>
+     </view>
+  
+     <!-- 注册 和忘记密码  -->
+     <view class="zhuce">
+      <view bindtap="change">立即注册</view>
+      <navigator>忘记密码?</navigator>
+     </view>
+  
+     <!-- 登录按钮 -->
+     <view class="denglu">
+       <button class="btn-dl" type="primary" bindtap="checkeLogin">登 录</button>
+     </view>
+   </view>
+  
+ <!-- 提示框  使用以下方式登录 -->
+   <view class="v3" hidden="{{!showlogin}}">
+     <view class="line"></view>
+     <view class="lText">您还可以使用以下方式登录</view>
+     <view class="line"></view>
+   </view>
+  
+ <!--  weixin 图标展示view -->
+   <view class="qwwIcon" hidden="{{!showlogin}}" bindtap="handleWxLogin">
+     <image src="/icon/icon_mine/微信登录.png"></image>
+   </view>
+
+   <van-popup show="{{ show }}" round position="bottom" custom-style="height: 30%">
+    <view class="title">微信登录协议</view>
+    <view class="tip">如您从未使用过微信登录，我们将使用您的个人基本信息注册新账号，初始密码123456</view>
+    <button class="cancel" bindtap="cancel">取 消</button>
+    <button class="agree" bindtap="agree">同 意</button>
+    </van-popup>
+
+                                                          <!-- 注册 -->
+
+ <!-- v2父容器  子view使用绝对布局 -->
+   <view class="v2 myv2" hidden="{{showlogin}}">
+     <view class="dltext">注 册</view>
+  
+     <!-- 手机号 -->
+     <view class="phoneCs username">
+      <icon type="phone"></icon>
+       <image src="/icon/icon_mine/UI配色修改.png" class="ph"></image>
+       <input placeholder="用户名" bindinput="username"/>
+     </view>
+
+     <view class="phoneCs phone">
+      <icon type="phone"></icon>
+       <image src="/icon/icon_mine/UI配色修改.png" class="ph"></image>
+       <input placeholder="手机号" bindinput="phone"/>
+     </view>
+
+     <view class="phoneCs password">
+      <icon type="phone"></icon>
+       <image src="/icon/icon_mine/UI配色修改.png" class="ph"></image>
+       <input placeholder="密码" bindinput="password"/>
+     </view>
+
+     <view class="phoneCs password2">
+      <icon type="phone"></icon>
+       <image src="/icon/icon_mine/UI配色修改.png" class="ph"></image>
+       <input placeholder="确认密码" bindinput="password2"/>
+     </view>
+  
+  
+     <!-- 登录  -->
+     <view class="zhuce tologin">
+       <view bindtap="change">前往登录</view>
+     </view>
+  
+     <!-- 注册 -->
+     <view class="denglu">
+       <button class="btn-dl" type="primary" bindtap="checkeRegister">注 册</button>
+     </view>
+   </view>
+  
+  
+ </view>
+

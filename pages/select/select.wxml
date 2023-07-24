@@ -1,0 +1,51 @@
+<!--pages/select/select.wxml-->
+<van-notify id="van-notify" />
+<image src="https://img-blog.csdnimg.cn/a01fa8b64deb461aacece97327a212c6.png" class="topimage"></image>
+<view class="top">
+  <view class="title">{{citem.cname}}</view>
+  <view class="address">{{citem.address}}</view>
+</view>
+<view class="notice">
+  <van-notice-bar left-icon="volume-o" color="#1989fa" background="#ecf9ff" text="根据疫情防控需要，请您在进入影城前佩戴口罩！" />
+</view>
+
+
+<view class="box" style="transform: translateX({{move}}rpx);">
+  <view class='tip' bindtap="tip"></view>
+  <view wx:for="{{movies}}" wx:key="index">
+    <image src="{{item.img}}" class='{{type==index ? "active" : "noactive"}}' bindtap="change" data-index="{{index}}" data-item="{{item}}"></image>
+  </view>
+  <view class='tip' bindtap="tip"></view>
+</view>
+<van-empty style="position:absolute;bottom: 100rpx;left: 200rpx;" wx:if="{{dates.length==0}}" image="search" description="暂无场次" />
+<view class="date" wx:if="{{dates.length>0}}">
+  <van-tabs active="{{0}}" sticky animated swipeable bind:change="onChange" >
+    <van-tab wx:for="{{dates}}" wx:key="index" title="{{item}}" name="{{item}}" >
+    
+      <view class="list" wx:for="{{sessions}}" wx:key="index" data-index="{{index}}">
+        <view>
+          <!-- 内容区域 -->
+          <view class="list-item" bindtap="toSeat" data-sitem="{{item}}">
+            <view class="main-left">
+              <view class="time">
+                {{item.starttime}}
+              </view>
+              <view class="time end">
+                {{item.endtime}}散场
+              </view>
+            </view>
+            <view class="hall">
+                {{item.hid}}号厅
+            </view>
+            <view class="main">
+              价格：<text style="font-weight: 600;font-size: 36rpx;">{{item.tprice}}</text>
+            </view>
+            <button class="btn">购票</button>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+   <!-- 底部安全区 提示 -->
+   <view class='placeholder-view' wx:if="{{sessions.length>0}}">到底了~</view>
+</view>

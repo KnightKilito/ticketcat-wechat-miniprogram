@@ -1,0 +1,63 @@
+<!-- 轮播图 -->
+<!-- 轮播图 -->
+<van-notify id="van-notify" />
+<view class="swiper-container">
+    <swiper class="swiper" autoplay="true" indicator-dots="true">
+        <swiper-item>
+          <image src="https://img-blog.csdnimg.cn/bada8d8f6a394f7f895f878be8489cdc.png"  class="swiper-image" alt="swiperphoto" bindtap="swiperFindPay" data-mid="4"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="https://img-blog.csdnimg.cn/b062ab73fd6340418b9486cffb8ba468.png"  class="swiper-image" alt="swiperphoto" bindtap="swiperToCinemas"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="https://img-blog.csdnimg.cn/21a4692ba8464c84a8cf9233e65a3c0a.png"  class="swiper-image" alt="swiperphoto" bindtap="swiperFindPay" data-mid="8"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="https://img-blog.csdnimg.cn/7e67ccdc73bb42c4b84db5b7f5302141.png"  class="swiper-image" alt="swiperphoto" bindtap="swiperFindPay" data-mid="9"></image>
+        </swiper-item>
+  </swiper>
+</view>
+
+
+<!-- 标签 -->
+<van-tabs active="{{ active }}" animated swipeable sticky nav-class="tab-nav" tab-class="tab" 
+  tab-active-class="tab-active" bind:change="onChange">
+  <van-tab title="正在热映">
+    <view class="content">
+      <view wx:for="{{movies}}" wx:key="mid">
+        <view class="item" bindtap="findPay" data-mitem="{{item}}">
+          <image class="image" src="{{item.img}}"></image>
+          <view class="title">{{item.mname}}</view>
+          <view class="tip" style="margin-top: 10rpx;">淘票猫评分 <text style="color: orange;">{{item.score}}</text></view>
+          <view class="tip">导演：{{item.director}}</view>
+          <view class="tip">主演：{{item.actor}}</view>
+          <view class="tip">
+            <van-tag  plain type="danger">正在热映</van-tag>
+            <van-tag wx:if="{{item.score>=9}}" plain type="success">近期热评</van-tag>
+          </view>
+          <button class="btn">购 票</button>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="即将上映">
+    <view class="content">
+      <view wx:for="{{movies}}" wx:key="mid">
+        <!-- 内容区域 -->
+        <view class="item" bindtap="findPay" data-mitem="{{item}}">
+          <image class="image" src="{{item.img}}"></image>
+          <view class="title title2">{{item.mname}}</view>
+          <view class="tip"><text style="color: #3d9bfb;">{{item.rtime}}</text>上映</view>
+          <view class="tip">导演：{{item.director}}</view>
+          <view class="tip">演员：{{item.actor}}</view>
+          <view class="tip">
+            <van-tag  plain type="success">即将上映</van-tag>
+          </view>
+          <button class="btn btn2">想看</button>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>
+ <!-- 底部安全区 提示 -->
+ <view class='placeholder-view'>到底了~</view>

@@ -1,0 +1,74 @@
+{
+  "entryPagePath": "pages/index/index",
+  "pages":[
+    "pages/index/index",
+    "pages/films/films",
+    "pages/cinema/cinema",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/films/tocinema/tocinema",
+    "pages/select/select",
+    "pages/select/seat/seat",
+    "pages/orederdetail/orderdetail",
+    "pages/mine/order/order",
+    "pages/mine/score/score",
+    "pages/mine/favourite/favourite",
+    "pages/mine/login/login",
+    "pages/search/search",
+    "pages/edit/edit"
+  ],
+  "window":{
+    "color": "#000000",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#424656",
+    "navigationBarTitleText": "淘票猫",
+    "pageOrientation": "auto"
+  },
+  "tabBar": {
+    "selectedColor": "#7382E0",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "./icon/index.png",
+      "selectedIconPath": "./icon/index-s.png"
+    },
+    {
+      "pagePath": "pages/films/films",
+      "text": "电影",
+      "iconPath": "./icon/file.png",
+      "selectedIconPath": "./icon/file-s.png"
+    },
+    {
+      "pagePath": "pages/cinema/cinema",
+      "text": "影院",
+      "iconPath": "./icon/cinema.png",
+      "selectedIconPath": "./icon/cinema-s.png"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "./icon/mine.png",
+      "selectedIconPath": "./icon/mine-s.png"
+    }
+  ]
+  },
+  "usingComponents": { 
+      "van-tab": "@vant/weapp/tab/index",
+      "van-tabs": "@vant/weapp/tabs/index",
+      "van-tag": "@vant/weapp/tag/index",
+      "van-nav-bar": "@vant/weapp/nav-bar/index",
+      "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+      "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+      "van-rate": "@vant/weapp/rate/index",
+      "van-notice-bar": "@vant/weapp/notice-bar/index",
+      "van-circle": "@vant/weapp/circle/index",
+      "van-search": "@vant/weapp/search/index",
+      "van-notify": "@vant/weapp/notify/index",
+      "van-popup": "@vant/weapp/popup/index",
+      "van-dialog": "@vant/weapp/dialog/index",
+      "van-uploader": "@vant/weapp/uploader/index",
+      "van-button": "@vant/weapp/button/index",
+      "van-empty": "@vant/weapp/empty/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

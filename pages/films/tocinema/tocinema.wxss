@@ -1,0 +1,170 @@
+page{
+  overflow-x:hidden;
+  height: auto;
+  background-color:#e8e9ee;
+}
+.like{
+  position: relative;
+  top: 20rpx;
+  left: -126rpx;
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: rgba(158, 158, 158, 0.87);
+  color: white;
+}
+.like>image{
+  position: relative;
+  top: 6rpx;
+  right: 8rpx;
+  color: white !important;
+  width: 40rpx;
+  height: 40rpx;
+}
+.islike{
+  position: relative;
+  top: 20rpx;
+  left: -126rpx;
+  width: 200rpx;
+  height: 70rpx;
+  text-indent: -4rpx;
+  line-height: 70rpx;
+  background-color: rgba(158, 158, 158, 0.87);
+  color: rgb(245, 207, 102);
+}
+.islike>image{
+  position: relative;
+  top: 6rpx;
+  right: 8rpx;
+  color: white !important;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.top{
+  width: 100%;
+  height: 700rpx;
+  background: -webkit-linear-gradient(top,#424656,#e8e9ee);
+  /* background: -webkit-linear-gradient(left,#4f12c0bb,rgb(55, 143, 224),rgba(102, 178, 250, 0.664)); */
+  /* background-image: url('/image/侏罗纪世界.png');*/
+}
+.top>image{
+  width: 240rpx;
+  height: 340rpx;
+  border-radius: 20rpx;
+  margin: 50rpx 20rpx;
+  margin-bottom: 30rpx;
+  float: left;
+  background: #f5f4f4 !important;
+}
+.top-title{
+  width: 460rpx;
+  height: auto;
+  max-height: 120rpx;
+  /* background-color:rgb(103, 103, 241); */
+  float: left;
+  margin: 5rpx 0 5rpx 10rpx;
+  font-size: 34rpx;
+}
+.tit{
+  font-size: 40rpx;
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.top-main{
+  float: left;
+  width: 94%;
+  margin:20rpx 3%;
+  border-radius: 16rpx;
+  height: auto;
+  border: 1px solid white;
+  background: -webkit-linear-gradient(left,rgba(112, 154, 204, 0.425),#b87edaaf);  
+}
+
+/* 内容 */
+.content{ 
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  width: 100%;
+}
+.item{
+  position: relative;
+  width: 96%;
+  min-height: 180rpx;
+  /* height: auto; */
+  margin:0 0 20rpx 0rpx;
+  border-radius: 10px;
+  background-color: white;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  border:1px solid rgb(161, 161, 161);
+}
+.title{
+  position: relative;
+  font-size: 34rpx;
+  width: 620rpx;
+  font-weight: 600;
+  height: auto; 
+  left: 40rpx;
+  top: 40rpx;
+  /* background-color: green; */
+}
+.detail{
+  text-indent: 60rpx;
+  padding: 20rpx;
+}
+.enter{
+  position: relative;
+  font-size: 36rpx;
+  color: grey;
+  left: 640rpx;
+  top: -10rpx;
+}
+.address{
+  position: relative;
+  left: 40rpx;
+  top: 10rpx;
+  font-size: 28rpx;
+  width: 500rpx;
+  height: auto;
+  /* background-color: lightsalmon; */
+  overflow: hidden;
+  color: grey;
+}
+.time{
+  width: 500rpx;
+  /* height: 80rpx; */
+  /* background-color: green; */
+}
+
+.price{
+  position: relative;
+  top: -50rpx;
+  left: 570rpx;
+  /* background-color: blueviolet; */
+}
+
+/* item标签 */
+.van-tag{
+  margin-left: 10rpx;
+  /* color: blue !important; */
+}
+
+.tip {
+  width: 100%;
+  height:100rpx;
+  color: gray;
+  text-align: center;
+  line-height: 100rpx;
+  /* background-color: green; */
+}
+
+.placeholder-view {
+  width: 100%;
+  height:100rpx;
+  color: gray;
+  text-align: center;
+}

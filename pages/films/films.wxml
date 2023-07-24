@@ -1,0 +1,42 @@
+<!--pages/films/films.wxml-->
+<van-notify id="van-notify" />
+<!-- 搜索框 -->
+      <van-search
+      value="{{ value }}"
+      shape="round"
+      background="#8190BB"
+      placeholder="输入电影名称查询"
+      bind:change="onChange"
+      bind:search="onSearch"
+      custom-class="search"
+    />
+<!-- 下拉菜单 -->
+    <van-dropdown-menu active-color="#1989fa" custom-class="mymenu">
+      <van-dropdown-item value="{{ status }}" options="{{ option1 }}" bind:change="changeStatus"/>
+      <van-dropdown-item value="{{ type }}" options="{{ types }}" bind:change="changeType" disabled="{{ disable }}"/>
+    </van-dropdown-menu>
+
+    <view class="content">
+      <view wx:for="{{movies}}" wx:key="index">
+        <!-- 内容区域 -->
+        <view class="item" bindtap="findPay" data-mitem="{{item}}">
+          <image class="image" src="{{item.img}}"></image>
+          <view class="title">{{item.mname}}</view>
+          <view class="tip" wx:if="{{item.status>0}}" style="margin-top: 10rpx;">淘票猫评分 <text style="color: orange;">{{item.score}}</text></view>
+          <view class="tip" wx:if="{{item.status<0}}" style="margin-top: 10rpx;">{{item.rtime}}<text style="color: orange;">上映</text></view>
+          <view class="tip">导演：{{item.actor}}</view>
+          <view class="tip">主演：{{item.director}}</view>
+          <view class="tip" wx:if="{{item.status>0}}">
+            <van-tag wx:if="{{item.score>=9}}" plain type="warning">高分电影</van-tag>
+            <van-tag plain type="primary">{{item.style}}</van-tag>
+          </view>
+          <view class="tip" wx:if="{{item.status<0}}">
+            <van-tag wx:if="{{item.score>20}}" plain type="success">即将上映</van-tag>
+          </view>
+          <button class="btn">购 票</button>
+        </view>
+      </view>
+    </view>
+     <!-- 底部安全区 提示 -->
+     <view class='placeholder-view'>到底了~</view>
+ 

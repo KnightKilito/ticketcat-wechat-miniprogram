@@ -1,0 +1,110 @@
+page{
+  overflow-x:hidden;
+  height: auto;
+  background-color:#e8e9ee;
+}
+.search{
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background: #896AEA;
+}
+.mymenu{
+  position: fixed;
+  width: 100%;
+  top: 100rpx;
+  height: 90rpx !important;
+  z-index: 99;
+  background: -webkit-linear-gradient(top,#896AEA,#e8e9ee);
+}
+/* 标签 */
+.tab-nav{
+  background-color: #e8e9ee;
+}
+.tab{
+  flex: none !important;
+  width: 375rpx;
+  /* background-color:red; */
+}
+.tab-active{
+  color: red !important;
+}
+
+/* 内容 */
+.content{
+  position: relative;
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  width: 100%;
+  top: 190rpx;
+}
+
+.item{
+  position: relative;
+  /* overflow: hidden; */
+  width: 96%;
+  height: 250rpx;
+  margin:0 0 15rpx 6rpx;
+  border-radius: 10px;
+  background-color: white;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  /* border:1px solid orangered; */
+}
+
+.title{
+  float: left;
+  font-size: 34rpx;
+  width: 600rpx;
+  font-weight: 600;
+  height: 50rpx; 
+  margin-top: 30rpx;
+  margin-left: 30rpx; 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* background-color: green; */
+}
+.enter{
+  float: right;
+  font-size: 36rpx;
+  color: grey;
+  margin-top: 30rpx;
+  margin-right:40rpx;
+}
+.address{
+  float: left;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  width: 500rpx;
+  height: 90rpx;
+  /* background-color: lightsalmon; */
+  color: grey;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.score{
+  float: left;
+  width: 300rpx;
+  margin:6rpx 0 0 30rpx; 
+}
+.price{
+  float: right;
+  line-height: 0rpx;
+  margin-right: 40rpx;
+}
+
+/* item标签 */
+.van-tag{
+  margin-left: 10rpx;
+  /* color: blue !important; */
+}
+
+.placeholder-view {
+  width: 100%;
+  height:100rpx;
+  color: gray;
+  text-align: center;
+}

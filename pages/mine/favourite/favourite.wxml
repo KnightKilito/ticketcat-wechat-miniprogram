@@ -1,0 +1,21 @@
+<!--pages/mine/favourite/favourite.wxml-->
+<van-notify id="van-notify" />
+    <view class="content">
+      <view wx:for="{{likes}}" wx:key="index" data-index="{{index}}">
+        <!-- 内容区域 -->
+        <view class="item">
+          <image class="image" src="{{item.img}}"></image>
+          <view class="title">{{item.mname}}</view>
+          <button class="islike" bindtap="cancelLike" data-mid="{{item.mid}}"><image src="/icon/s星星.png"></image>移除想看</button>
+        </view>
+      </view>
+      <van-empty
+        style="position: absolute;top:300rpx;left: 200rpx;"
+        wx:if="{{likes.length==0}}"
+        class="custom-image"
+        image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+        description="暂无想看"
+      />
+      <!-- 底部安全区 提示 -->
+      <view wx:if="{{likes.length>3}}" class='placeholder-view'>到底了~</view>
+    </view>

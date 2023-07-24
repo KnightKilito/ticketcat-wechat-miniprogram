@@ -1,0 +1,145 @@
+/* pages/edit/edit.wxss */
+page{
+  overflow-x:hidden;
+  overflow: hidden;
+  background-color:#e8e9ee;
+}
+#input{
+  width: 280rpx !important;
+}
+.base{
+  position: relative;
+  left: 260rpx;
+  top: 20rpx;
+  letter-spacing: 10rpx;
+  color: #19e46d;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+.base-btn{
+  position: relative;
+  top: 420rpx;
+  left: -10rpx;
+  width: 72%;
+  height: 90rpx;
+  background-color:#19e46d;
+  color: white;
+}
+.pass-btn{
+  position: relative;
+  top: 360rpx;
+  left: -10rpx;
+  width: 72%;
+  height: 90rpx;
+  background-color:#08b8e4;
+  color: white;
+}
+.password{
+  position: relative;
+  left: 240rpx;
+  top: 20rpx;
+  letter-spacing: 10rpx;
+  color: #08b8e4;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+.nickname{
+  margin-top: 80rpx;
+  margin-left: 90rpx;
+  position: absolute;
+  display: flex;
+  width:500rpx ;
+  height: 80rpx ;
+  border-bottom: 5rpx solid #19e46d;
+}
+.username{
+  position: relative;
+  top: 160rpx;
+}
+/* 手机图标 */
+.ph{
+  margin-top: 10rpx;
+  width: 130rpx;
+  height: 55rpx;
+  text-align: center;
+}
+/* 手机号输入框 */
+.nickname input{
+  width: 280rpx;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+}
+
+.phone{
+  margin-top: 200rpx;
+  margin-left: 90rpx;
+  position: absolute;
+  display: flex;
+  width:500rpx ;
+  height: 80rpx ;
+  border-bottom: 5rpx solid #19e46d;
+}
+
+/* 手机号输入框 */
+.phone input{
+  width: 280rpx;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+}
+.pass1{
+  top: 20rpx;
+  border-bottom: 5rpx solid #08b8e4;
+}
+.pass2{
+  top: 0rpx;
+  border-bottom: 5rpx solid #08b8e4;
+}
+.pass3{
+  top: 100rpx;
+  border-bottom: 5rpx solid #08b8e4;
+}
+.tip{
+  width: 160rpx;
+}
+
+
+.top{
+  width: 750rpx;
+  height: 1000rpx;
+  background-color: #19e46d;
+  position: absolute;
+  z-index: 1;
+}
+.bottom{
+  width: 1500rpx;
+  height: 1500rpx;
+  background-color: #08b8e4;
+  border-radius: 800rpx;
+  position: absolute;
+  bottom: -750rpx;
+  left: -360rpx;
+  z-index: 2;
+}
+
+.box{
+  position: absolute;
+  z-index: 5;
+  top:80rpx;
+  left: 3%;
+  height: 600rpx;
+  width: 94%;
+  background-color: white;
+  border-radius: 20rpx;
+}
+.box1{
+  position: absolute;
+  z-index: 5;
+  top: 720rpx;
+  height: 530rpx;
+  width: 94%;
+  left: 3%;
+  background-color: white;
+  border-radius: 20rpx;
+}

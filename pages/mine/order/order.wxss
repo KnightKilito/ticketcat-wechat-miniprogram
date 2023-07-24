@@ -1,0 +1,139 @@
+/* pages/mine/order/order.wxss */
+page{
+  overflow-x:hidden;
+  height: auto;
+  background-color:#e8e9ee;
+}
+.mymenu{
+  position: fixed;
+  width: 100%;
+  height: 90rpx !important;
+  background: -webkit-linear-gradient(top,#8190BB,#e8e9ee);
+}
+.delete-btn{
+  position: relative;
+  top: 0rpx;
+  width:700rpx;
+  margin-left: -25rpx;
+  height: 80rpx;
+  background-color: rgb(253, 92, 92);
+  color: white;
+  line-height: 80rpx;
+  font-weight: 300;
+  letter-spacing: 4rpx;
+}
+.score-btn{
+  background-color: rgb(17, 197, 32);
+  font-weight: 500;
+}
+.dialog{
+  width: 500rpx !important;
+  margin-left: 120rpx !important;
+}
+.dialog-img{
+  width: 320rpx;
+  height: 320rpx;
+  margin:10rpx 160rpx;
+}
+.score{
+  width: 400rpx;
+  /* background-color: red; */
+  margin: 40rpx auto;
+}
+/* 标签 */
+.tab-nav{
+  background-color: #e8e9ee;
+}
+.tab{
+  flex: none !important;
+  width: 375rpx;
+  /* background-color:red; */
+}
+.tab-active{
+  color: red !important;
+}
+
+/* 内容 */
+.content{ 
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  width: 100%;
+}
+.item{
+  position: relative;
+  /* overflow: hidden; */
+  width: 97%;
+  height: 300rpx;
+  margin:0 0 15rpx 1rpx;
+  border-radius: 10px;
+  background-color: white;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.image{
+  float: left;
+  height: 240rpx; 
+  width: 180rpx;
+  margin:30rpx 40rpx;
+  margin-left: 60rpx;
+  border-radius: 20rpx;
+  background-color: rgb(207, 207, 207);
+}
+.title{
+  float: left;
+  font-size: 34rpx;
+  width: 360rpx;
+  height: 50rpx; 
+  margin-top: 40rpx;   
+  /* background-color: green; */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tip{
+  float: left;
+  font-size: 28rpx;
+  margin: 5rpx 0;
+  width: 360rpx;
+  height: 40rpx;
+  /* background-color: lightsalmon; */
+  color: grey;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tip-half{
+    float: left;
+    font-size: 28rpx;
+    margin: 5rpx 0;
+    width: 160rpx;
+    height: 40rpx;
+    /* background-color: lightsalmon; */
+    overflow: hidden;
+    color: grey;
+}
+.price{
+  float: left;
+  font-size: 28rpx;
+  margin: 5rpx 0;
+  width: 200rpx;
+  height: 40rpx;
+  /* background-color: lightsalmon; */
+  overflow: hidden;
+  color: grey;
+  margin-left: 40rpx;
+}
+
+
+.time{
+  float: left;
+  margin:20rpx 0 0 60rpx; 
+  width: 100% !important;
+  color: gray;
+}
+
+.placeholder-view {
+  width: 100%;
+  height:100rpx;
+  color: gray;
+  text-align: center;
+}

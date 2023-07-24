@@ -1,0 +1,64 @@
+<van-notify id="van-notify" />
+<view class="normal">
+  <view class="box">
+    <view class="seatNormal float"></view>普通区
+    
+  </view>
+  <view class="box">
+    <view class="seatExcellent float"></view>优选区
+  </view>
+  <view class="box">
+    <view class="selected float"></view>已选
+  </view>
+</view>
+
+<view class="visual_screen">
+  <view class="screen"></view>
+</view>
+<view class="visual_title">{{sitem.hid}}号厅-（请佩戴口罩、1.3米以上儿童购票）</view>
+
+<view class="row">
+  <view class="rowtitle" wx:for="{{5}}" wx:key="index">{{index+1}}</view>
+</view>
+<view class="visual_seatings">
+  <block wx:for="{{seats}}" wx:key="index" data-index="{{index}}">
+    <view wx:if="{{item.status==2}}" class="selected"></view>
+    <view wx:if="{{item.status==0}}" class="seatNormal"bindtap="clickSeat" data-item="{{item}}"></view>
+    <view wx:if="{{item.status==1}}" class="seatExcellent"bindtap="clickSeat" data-item="{{item}}"></view>
+    <view wx:if="{{item.status==9}}" class="seatChosen"bindtap="clickSeat" data-item="{{item}}"></view>
+  </block>
+</view>
+<view class="our">
+淘票猫影视
+</view>
+
+
+<view class="bottom">
+   <view class="notice-safearea"><van-notice-bar
+    color="#1989fa"
+    background="white"
+    left-icon="info-o"
+    custom-class="mynotice"
+    text="疫情期间，影城将不提供公用3D眼镜，请您自备或在影城购买！"
+    /></view>
+    <view class="name">
+    {{seatItem.mname}}
+    </view>
+    <view class="time">
+    {{sitem.date}} {{sitem.starttime}}-{{sitem.endtime}}
+    </view>
+    <view class="change">切换场次</view>
+    <view class="order">
+      <view class="tag" wx:for="{{choose}}" wx:key="index">{{item.rowname}}排{{item.columnname}}座</view>
+    </view>
+      <!-- 3.3 确认按钮-->
+      <view class="buttonBox">
+        <block wx:if="{{selectedNum>0}}">
+          <button hover-class="hover" bindtap="toOrderDetails" style="width: 96%;">
+            ¥{{total}} 确认选座</button>
+        </block>
+        <block wx:else>
+          <button class="pleaseSelect" style="width: 96%;">请先选座</button>
+        </block>
+      </view>
+</view>

@@ -1,0 +1,125 @@
+/* pages/orederdetail/orderdetail.wxss */
+page{
+  overflow-x:hidden;
+  height: auto;
+  background-color:#e8e9ee;
+  background: -webkit-linear-gradient(top,#748be9,#e8e9ee);
+}
+
+.top{
+  width: 96%;
+  height: 760rpx;
+  background-color: white;
+  margin:40rpx 2%;
+  border-radius: 30rpx;
+  /* background: -webkit-linear-gradient(left,rgb(174, 204, 238),#e4d6b9,#dd854b); */
+  /* backdrop-filter: blur(5rpx); */
+  /* background-image: url('/image/侏罗纪世界.png');*/
+}
+.top>image{
+  width: 280rpx;
+  height: 390rpx;
+  border-radius: 20rpx;
+  margin: 60rpx 0 60rpx 20rpx;
+  float: left;
+}
+.top-title{
+  color: grey;
+  width: 400rpx;
+  height: auto;
+  max-height: 120rpx;
+  /* background-color:rgb(103, 103, 241); */
+  float: left;
+  margin: 10rpx 0 5rpx 10rpx;
+  font-size: 34rpx;
+}
+.tit{
+  font-size: 40rpx;
+  margin-top: 80rpx;
+  margin-bottom: 30rpx;
+  color: black;
+}
+.tip{
+  float: left;
+  width: 94%;
+  margin:10rpx 3%;
+  border-radius: 16rpx;
+  height: 80rpx;
+  border: 1px solid grey;
+  background-color: rgba(0, 0, 0, 0.034);
+}
+.tip>icon{
+  margin-top: 20rpx;
+  margin-left: 60rpx;
+}
+.tip1{
+  margin-top: -54rpx;
+  margin-left: 130rpx;
+  letter-spacing:5rpx;
+}
+
+.btn{
+  position:absolute;
+  bottom:500rpx;
+  left: 10%;
+  width: 80%;
+  height: 110rpx;
+  background-color: rgb(7, 112, 231);
+  border-radius: 40rpx;
+  color: white;
+  font-size: 44rpx;
+  letter-spacing:10rpx;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.btn:hover{
+  background-color: rgb(218, 218, 218);
+  color: rgb(7, 112, 231);
+  position:absolute;
+  bottom:500rpx;
+  left: 5%;
+  width: 90%;
+  height: 120rpx;
+  border-radius: 40rpx;
+  font-size: 44rpx;
+  letter-spacing:10rpx;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+/*分割线样式*/
+.line{
+  float: left;
+  background:#c6c6c7;
+  margin: 0 1% 20rpx 1%;
+  width: 98%;
+  height: 3rpx;
+}
+
+.placeholder-view {
+  width: 100%;
+  height:100rpx;
+  color: gray;
+  text-align: center;
+}
+
+.order{
+  position: relative;
+  top: 460rpx;
+  width: 100%;
+  height: 70rpx;
+  background-color: pink;
+}
+.choose{
+  float: left;
+  margin-top: -400rpx;
+  margin-left: 50rpx;
+  color: #057ceb;
+  border: 1px solid #057ceb;
+  background-color: white;
+  border-radius: 10rpx;
+  padding: 3rpx;
+  height: 60rpx;
+  width: 100rpx;
+  text-align: center;
+}

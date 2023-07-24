@@ -1,0 +1,77 @@
+<!--pages/mine/mine.wxml-->
+<van-notify id="van-notify" />
+    <!-- 用户信息 -->
+    <view class="userinfo">
+      <block wx:if="{{islogin}}">
+        <view class="userinfo-avatar">
+          <image src="{{userInfo.avatar}}"></image>
+        </view>
+        <view class="username">
+          <text>{{hello}}{{userInfo.nickname}}</text>
+        </view>
+      </block>
+      <block wx:if="{{!islogin}}">
+        <view class="userinfo-avatar">
+            <image src="/icon/icon_mine/未登录头像.png" bindtap="toLogin"></image>
+        </view>
+        <view class="username" bindtap="toLogin">立即登录</view>
+      </block>
+    </view>
+
+    <view class="box">
+      <view class="item">
+        <image src="/icon/icon_mine/卡券.png" style="width:80rpx;height: 80rpx;margin-left: 30rpx;"></image>
+        <view class="title" style="text-indent: 10rpx;" bindtap="toOrder">我的订单</view>
+        <view class="line"></view>
+      </view>
+      <view class="item" bindtap="toFavourite">
+        <image src="/icon/icon_mine/收藏.png"></image>
+        <view class="title">我的想看</view>
+        <view class="line"></view>
+      </view>
+      <view class="item" bindtap="toScore">
+        <image src="/icon/icon_mine/爱心.png"></image>
+        <view class="title">我的偏好</view>
+      </view>
+    </view>
+
+    <view class="box">
+      <view class="item" bindtap="handleUploadPhoto">
+        <image src="/icon/icon_mine/上传头像.png"></image><view class="title">上传新头像</view>
+        <view class="line"></view>
+      </view>
+      <view class="item" bindtap="toEdit">
+        <image src="/icon/icon_mine/修改信息.png"></image><view class="title">修改个人信息</view>
+        <view class="line"></view>
+      </view> 
+
+      <view wx:if="{{!bindwx}}" class="item" bindtap="toBindWx">
+        <image src="/icon/icon_mine/微信.png"></image><view class="title">绑定微信</view>
+        <view class="line"></view>
+      </view>
+      <view wx:if="{{bindwx}}" class="item" bindtap="unBindWx">
+        <image src="/icon/icon_mine/微信.png"></image><view class="title">已绑定微信 {{wxname}} <text style="text-indent: 60rpx;color: red; font-size: 28rpx;">点我解绑</text></view>
+        <view class="line"></view>
+      </view>
+
+      <view class="item" bindtap="loginOut">
+        <image src="/icon/icon_mine/退出 .png"></image><view class="title">退出登录</view>
+      </view>
+    </view>
+
+ <!-- 底部安全区 提示 -->
+ <view class='placeholder-view'>淘票猫 Version 1.0</view>
+
+ <van-dialog use-slot show-cancel-button confirm-button-open-type="getUserInfo"
+ title="上传新头像" show="{{ show }}" bind:confirm="confirmPhoto">
+  <van-uploader file-list="{{ fileList }}" deletable="{{ true }}" style="margin-left: 240rpx;" custom-class="photo"
+    max-count="1"
+    accept="media"
+    use-before-read
+    image-fit
+    bind:delete="deletePhoto"
+    bind:before-read="beforeRead"
+    bind:after-read="afterRead">
+  <van-button icon="photo" type="primary" custom-class="upload-btn">选取图片</van-button>
+</van-uploader>
+</van-dialog>

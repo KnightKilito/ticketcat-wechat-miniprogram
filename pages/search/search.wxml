@@ -1,0 +1,45 @@
+<!--pages/search/search.wxml-->
+<view class='total' wx:if="{{movies.length>0}}">查找到以下{{movies.length}}条电影</view>
+ <view class='total' wx:if="{{cinemas.length>0}}">查找到以下{{cinemas.length}}家影院</view>
+<view class="content" wx:if="{{movies.length>0}}">
+      <view wx:for="{{movies}}" wx:key="index">
+        <!-- 内容区域 -->
+        <view class="item" bindtap="findPay" data-mitem="{{item}}">
+          <image class="image" src="{{item.img}}"></image>
+          <view class="title">{{item.mname}}</view>
+          <view class="tip" wx:if="{{item.status>0}}" style="margin-top: 10rpx;">淘票猫评分 <text style="color: orange;">{{item.score}}</text></view>
+          <view class="tip" wx:if="{{item.status<0}}" style="margin-top: 10rpx;">{{item.rtime}}<text style="color:#3d9bfb">上映</text></view>
+          <view class="tip">导演：{{item.actor}}</view>
+          <view class="tip">主演：{{item.director}}</view>
+          <view class="tip" wx:if="{{item.status>0}}">
+            <van-tag wx:if="{{item.score>20}}" plain type="primary">3D IMAX</van-tag>
+            <van-tag wx:if="{{item.score>=9}}" plain type="warning">高分电影</van-tag>
+          </view>
+          <view class="tip" wx:if="{{item.status<0}}">
+            <van-tag wx:if="{{item.score>20}}" plain type="success">即将上映</van-tag>
+          </view>
+          <button class="btn">购 票</button>
+        </view>
+      </view>
+    </view>
+
+    <view class="content1" wx:if="{{cinemas.length>0}}">
+  <view wx:for="{{cinemas}}" wx:key="index" data-index="{{index}}">
+    <!-- 内容区域 -->
+    <view class="item1" bindtap="toSelect" data-item="{{item}}">
+      <view class="title1">
+       {{item.cname}}
+        <van-tag type="success">影城卡</van-tag>
+      </view>
+      <view class="enter1">></view>
+      <view class="address1">{{item.address}}</view>
+      <view class="score1">
+        <van-rate value="{{ 4.8 }}" size="{{ 20 }}" allow-half color="#ffd21e"  gutter="12rpx" readonly void-icon="star" void-color="#eee"/>
+      </view>
+      <view class="price1"><text style="color: red;">{{index+26.9}}</text>起</view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部安全区 提示 -->
+<view class='placeholder-view'>到底了~</view>

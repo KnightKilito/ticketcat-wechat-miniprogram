@@ -1,0 +1,91 @@
+
+page{
+  overflow-x:hidden;
+  height: auto;
+  background-color:#e8e9ee;
+}
+.box{
+  height: auto;
+  width: 94%;
+  background-color: white;
+  margin: 30rpx auto;
+  border-radius: 20rpx;
+}
+.item{
+  height: 100rpx;
+  margin: 0rpx auto;
+  /* background-color: lightblue; */
+}
+.title{
+  float:left;
+  line-height: 100rpx;
+  text-indent: 20rpx;
+  font-size: large;
+}
+.box image{
+  float:left;
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+}
+
+/*分割线样式*/
+.line{
+  float: left;
+  background:#dadbe1;
+  margin: 0rpx 0 0 30rpx;
+  width: 90%;
+  height: 2rpx;
+}
+
+
+
+
+.placeholder-view {
+  width: 100%;
+  height:100rpx;
+  color: gray;
+  text-align: center;
+}
+
+.userinfo {
+  /* z-index: 5000; */
+  /* position: fixed; */
+  color: #aaa;
+  width: 100%;
+  height: 380rpx;
+  background: -webkit-linear-gradient(top,#2bb7ef,#e8e9ee);
+  /* background-color:#2bb7ef; */
+  /* background-image: url(https://img-blog.csdnimg.cn/f284c8f455fb48c6b761238fba99eb4b.png); */
+}
+.userinfo-avatar {
+  overflow: hidden;
+  position: relative;
+  width: 188rpx;
+  height: 188rpx;
+  top: 100rpx;
+  left: 80rpx;
+  border-radius: 50%;
+}
+.userinfo-avatar>image{
+  width: 188rpx;
+  height: 188rpx;
+}
+.username{
+  position: absolute;
+  top: 170rpx;
+  left: 280rpx;
+  font-size: 40rpx;
+  color: #fff;
+  /* background-color: red; */
+  width: 400rpx;
+}
+
+.upload-btn{
+  position: relative;
+  height: 200rpx !important;
+  top:20rpx;
+  margin-bottom:40rpx;
+  left: -22rpx;
+}

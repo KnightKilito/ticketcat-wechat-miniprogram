@@ -1,0 +1,37 @@
+<!--pages/films/films.wxml-->
+<van-notify id="van-notify" />
+<van-search
+      value="{{ value }}"
+      shape="round"
+      background="#896AEA"
+      placeholder="输入影院名称查询"
+      bind:change="onChange"
+      bind:search="onSearch"
+      custom-class="search"
+/>
+<!-- 下拉菜单 -->
+<van-dropdown-menu active-color="#1989fa" custom-class="mymenu">
+  <van-dropdown-item value="{{ area }}" options="{{ areas }}" bind:change="changeArea" />
+  <van-dropdown-item value="{{ brand }}" options="{{ brands }}" bind:change="changeBrand" />
+</van-dropdown-menu>
+
+<view class="content">
+  <view wx:for="{{cinemas}}" wx:key="index" data-index="{{index}}">
+    <!-- 内容区域 -->
+    <view class="item" bindtap="toSelect" data-item="{{item}}">
+      <view class="title">
+       {{item.cname}}
+        <van-tag type="success">影城卡</van-tag>
+      </view>
+      <view class="enter">></view>
+      <view class="address">{{item.address}}</view>
+      <view class="score">
+        <van-rate value="{{ 4.8 }}" size="{{ 20 }}" allow-half color="#ffd21e"  gutter="12rpx" readonly void-icon="star" void-color="#eee"/>
+      </view>
+      <view class="price"><text style="color: red;">{{index+26.9}}</text>起</view>
+    </view>
+  </view>
+ 
+</view>
+ <!-- 底部安全区 提示 -->
+ <view class='placeholder-view'>到底了~</view>

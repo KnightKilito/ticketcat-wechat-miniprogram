@@ -1,0 +1,37 @@
+<!--pages/edit/edit.wxml-->
+<van-notify id="van-notify" />
+<view class="top"></view>
+<view class="box">
+  <view class="base">基础信息</view>
+  <view class="nickname">
+       <view class="ph"> 昵 称：</view>
+       <input bindinput="nickname" value="{{nickname}}"/>
+  </view>
+  <view class="phone">
+       <view class="ph">手机号：</view>
+       <input bindinput="phone" value="{{phone}}"/>
+  </view>
+  <view class="phone username">
+       <view class="ph">用户名：</view>
+       <input bindinput="username" value="{{username}}"/>
+  </view>
+  <button class="base-btn" bindtap="changeBase">修 改</button>
+</view>
+
+<view class="box1">
+  <view class="password">修改密码</view>
+  <view class="nickname pass1">
+       <view class="ph tip">原密码：</view>
+       <input bindinput="password" value="{{password}}"/>
+  </view>
+  <view class="phone pass2">
+       <view class="ph tip">新密码：</view>
+       <input bindinput="password1" value="{{password1}}"/>
+  </view>
+  <view class="phone pass3">
+       <view class="ph tip">确认密码：</view>
+       <input bindinput="password2" value="{{password2}}"/>
+  </view>
+  <button class="pass-btn" bindtap="changePass">修 改</button>
+</view>
+<view class="bottom"></view>

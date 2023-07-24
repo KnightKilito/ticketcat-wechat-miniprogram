@@ -1,0 +1,106 @@
+<!--pages/mine/order/order.wxml-->
+<van-notify id="van-notify" />
+<!-- 下拉菜单 -->
+<van-tabs active="{{ active }}" custom-class="mymenu">
+  <van-tab title="全部订单">
+  
+    <view class="content">
+      <view wx:for="{{orders}}" wx:key="index" data-index="{{index}}">
+        <!-- 内容区域 -->
+        <view class="item" bindtap="detail" data-item="{{item}}">
+          <image class="image" src="{{item.img}}"></image>
+          <view class="title">{{item.mname}}</view>
+          <view class="tip" style="margin-top: 10rpx;">{{item.address}}</view>
+          <view class="tip" >{{item.date}}</view>
+          <view wx:if="{{item.status==1}}" class="tip-half"><text style="color:rgb(9, 231, 109)">已出票</text></view>
+          <view wx:if="{{item.status==2}}" class="tip-half"><text style="color:red">待评分</text></view>
+          <view wx:if="{{item.status==3}}" class="tip-half"><text style="color:grey">已评分</text></view>
+          <view class="price">实付款：￥{{item.tmoney}}</view>
+        </view>
+      </view>
+    </view>
+    <van-empty wx:if="{{orders.length==0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂无订单记录"/>
+    <!-- 底部安全区 提示 -->
+    <view wx:if="{{orders.length>0}}" class='placeholder-view'>到底了~</view>
+  </van-tab>
+
+  <view class="content">
+    <van-tab title="已出票">
+      <view wx:for="{{hadpay}}" wx:key="index" data-index="{{index}}">
+          <!-- 内容区域 -->
+          <view wx:if="{{item.status==1}}" class="item" bindtap="detail" data-item="{{item}}">
+            <image class="image" src="{{item.img}}"></image>
+            <view class="title">{{item.mname}}</view>
+            <view class="tip" style="margin-top: 10rpx;">{{item.address}}</view>
+            <view class="tip" >{{item.date}}</view>
+            <view wx:if="{{item.status==1}}" class="tip-half"><text style="color:rgb(9, 231, 109)">已出票</text></view>
+            <view wx:if="{{item.status==2}}" class="tip-half"><text style="color:red">待评分</text></view>
+            <view wx:if="{{item.status==3}}" class="tip-half"><text style="color:grey">已评分</text></view>
+            <view class="price">实付款：￥{{item.tmoney}}</view>
+          </view>
+        </view>
+        <van-empty wx:if="{{hadpay.length==0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂无未使用记录"/>
+        <!-- 底部安全区 提示 -->
+        <view wx:if="{{hadpay.length>0}}" class='placeholder-view'>到底了~</view>
+    </van-tab>
+  </view>
+
+
+  <view class="content">
+    <van-tab title="待评价">
+      <view wx:for="{{needscore}}" wx:key="index" data-index="{{index}}">
+          <!-- 内容区域 -->
+          <view wx:if="{{item.status==2}}" class="item" bindtap="detail" data-item="{{item}}">
+            <image class="image" src="{{item.img}}"></image>
+            <view class="title">{{item.mname}}</view>
+            <view class="tip" style="margin-top: 10rpx;">{{item.address}}</view>
+            <view class="tip" >{{item.date}}</view>
+            <view class="tip-half"><text style="color:red">待评分</text></view>
+            <view class="price">实付款：￥{{item.tmoney}}</view>
+          </view>
+        </view>
+        <van-empty wx:if="{{needscore.length==0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂无待评价"/>
+        <!-- 底部安全区 提示 -->
+        <view wx:if="{{needscore.length>0}}" class='placeholder-view'>到底了~</view>
+      </van-tab>
+  </view>   
+
+  <view class="content">
+    <van-tab title="已评价">
+      <view wx:for="{{done}}" wx:key="index" data-index="{{index}}">
+          <!-- 内容区域 -->
+          <view class="item" bindtap="detail" data-item="{{item}}">
+            <image class="image" src="{{item.img}}"></image>
+            <view class="title">{{item.mname}}</view>
+            <view class="tip" style="margin-top: 10rpx;">{{item.address}}</view>
+            <view class="tip" >{{item.date}}</view>
+            <view class="tip-half"><text style="color:grey">已评分</text></view>
+            <view class="price">实付款：￥{{item.tmoney}}</view>
+          </view>
+        </view>
+        <van-empty wx:if="{{done.length==0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="暂无已评价"/>
+        <!-- 底部安全区 提示 -->
+        <view wx:if="{{done.length>0}}" class='placeholder-view'>到底了~</view>
+      </van-tab>
+  </view> 
+</van-tabs>
+
+<van-dialog use-slot showConfirmButton="false" title="订单详情" show="{{ show }}">
+    <view class="title dialog">电影名称：{{item.mname}}</view>
+    <view class="tip dialog">放映时间：{{item.date}} {{item.starttime}}-{{item.outtime}}</view>
+    <view class="tip dialog">座位：{{item.sessionseats}}</view>
+    <view class="tip dialog">订单日期：{{item.ordertime}}</view>
+  <image class="dialog-img" src="https://img2.baidu.com/it/u=1989038259,1842360401&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500" />
+  <button wx:if="{{item.status==2}}"  class="delete-btn score-btn" data-tid="{{item.tid}}" bindtap="score">去评分</button>
+  <button class="delete-btn" data-tid="{{item.tid}}" bindtap="delete">删除订单</button>
+</van-dialog>
+<van-dialog use-slot showCancelButton="true" title="评分" show="{{ showscore }}" 
+bind:close="cancelScore" bind:confirm="confireScore" bind:cancel="cancelScore" data-item="{{item}}">
+  <view class="score">
+  <van-rate value="{{ value }}" size="{{ 25 }}" color="#ffd21e" allow-half touchable
+  void-icon="star" void-color="#eee" bind:change="changeValue"/>{{value}}分
+  </view>
+  <button class="delete" data-tid="{{item.tid}}" bindtap="delete"></button>
+
+</van-dialog>
+

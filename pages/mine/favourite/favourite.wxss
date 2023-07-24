@@ -1,0 +1,84 @@
+/* pages/mine/favourite/favourite.wxss */
+page{
+  overflow-x:hidden;
+  height: auto;
+  background-color:#e8e9ee;
+}
+.islike{
+  position: relative;
+  top: 20rpx;
+  width: 240rpx;
+  height: 70rpx;
+  text-indent: -4rpx;
+  line-height: 70rpx;
+  background-color: rgba(158, 158, 158, 0.87);
+  color: rgb(245, 207, 102);
+}
+.islike>image{
+  position: relative;
+  top: 6rpx;
+  right: 8rpx;
+  color: white !important;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 标签 */
+.tab-nav{
+  background-color: #e8e9ee;
+}
+.tab{
+  flex: none !important;
+  width: 375rpx;
+  /* background-color:red; */
+}
+.tab-active{
+  color: red !important;
+}
+
+/* 内容 */
+.content{ 
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  width: 100%;
+}
+.item{
+  float: left;
+  width: 330rpx;
+  height: 530rpx;
+  margin:24rpx 0 0 24rpx;
+  border-radius: 10px;
+  background-color: white;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.image{
+  height: 360rpx; 
+  width: 280rpx;
+  border-radius: 30rpx;
+  background-color: rgb(187, 187, 187);
+}
+.title{
+  float: left;
+  font-size: 34rpx;
+  width: 300rpx;
+  margin-left: 18rpx;
+  height: 40rpx; 
+  margin-top: 10rpx;   
+  letter-spacing: 6rpx;
+  /* background-color: green; */
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.placeholder-view {
+  float: left;
+  width: 100%;
+  height:100rpx;
+  margin-top: 50rpx;
+  color: gray;
+  text-align: center;
+}

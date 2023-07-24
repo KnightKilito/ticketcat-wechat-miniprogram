@@ -1,0 +1,29 @@
+<!--pages/orederdetail/orderdetail.wxml-->
+<van-notify id="van-notify" />
+ <!-- 提示词 -->
+ <view class="top">
+  <image src="{{seatItem.img}}"></image>
+  <view class="top-title tit">{{seatItem.mname}}</view>
+  <view class="top-title">{{sitem.date}} {{sitem.starttime}}~{{sitem.endtime}}</view>
+  <view class="top-title">共{{num}}张 原价 <text style="color:red">￥{{total}}</text></view>
+  <view class="top-title">{{sitem.hid}}号厅-扫码免费停车</view>
+  <view class="top-title">{{citem.cname}}</view>
+  <!-- <view class="order">
+  <view class="choose"wx:for="{{3}}" wx:key="index">{{index}}排{{item.columnname}}座</view>
+  </view> -->   
+  <!-- </view> -->
+  <view class="line"></view>
+  <view class="tip">
+    <icon type="warn"></icon>
+      <view class="tip1">不支持退票</view>
+  </view>
+  <view class="tip">
+    <icon type="warn"></icon>
+    <view class="tip1">不支持改签</view>
+  </view>
+
+  <button class="btn" bindtap="pay">
+  点我付款
+  </button>
+
+</view>

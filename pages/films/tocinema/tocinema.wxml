@@ -1,0 +1,42 @@
+ <!-- 提示词 -->
+ <van-notify id="van-notify" />
+ <view class="top">
+  <image src="{{mitem.img}}"></image>
+  <view class="top-title tit">{{mitem.mname}}</view>
+  <view class="top-title">上映时间：{{mitem.rtime}}</view>
+  <view class="top-title">主演：{{mitem.actor}}</view>
+  <view class="top-title">导演：{{mitem.director}}</view>
+  <button wx:if="{{!islike}}" class="like" bindtap="like"><image src="/icon/星星.png"></image>想看</button>
+  <button wx:if="{{islike}}" class="islike" bindtap="cancelLike"><image src="/icon/s星星.png"></image>已想看</button>
+
+  <view class="top-main">
+    <view class="detail">剧情介绍：{{mitem.context}}</view>
+  </view>
+
+</view>
+
+ <view class='tip' wx:if="{{cinemas.length>0}}">以下影院正在热映该影片~</view>
+ <van-empty
+        style="position: absolute;top:650rpx;left: 80rpx;"
+        wx:else=""
+        class="custom-image"
+        image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+        description="该影片暂时没有影院放映哦~"
+  />
+<view class="content">
+  <view wx:for="{{cinemas}}" wx:key="index" data-index="{{index}}">
+    <!-- 内容区域 -->
+    <view class="item" bindtap="toSelect" data-item="{{item}}">
+      <view class="title">
+        {{item.cname}}
+        <van-tag type="danger">精品影院</van-tag>
+      </view>
+      <view class="enter">></view>
+      <view class="address">{{item.address}}</view>
+      <view class="address time">近期场次：14:00 | 16:00 | 21:20</view>
+      <view class="price"><text style="color: red;">49.9</text><text style="color: gray;font-size: 26rpx;">起</text></view>
+    </view>
+  </view>
+</view>
+   <!-- 底部安全区 提示 -->
+   <view class='placeholder-view' hidden="{{cinemas.length==0}}">到底了~</view>

@@ -1,0 +1,15 @@
+<!--pages/mine/score/score.wxml-->
+<van-notify id="van-notify" />
+  <view class="content" wx:for="{{lists}}">
+      <view class="item" bindtap="findPay" data-id="">
+        <van-circle value="{{ item.v*100 }}" stroke-width="10" size="120" text="{{item.k}}{{item.v*100}}%" />
+      </view>
+  </view>
+  <van-empty
+          style="position: absolute;top:300rpx;left: 200rpx;"
+          wx:if="{{lists.length==0}}"
+          class="custom-image"
+          image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+          description="多去看几场电影吧"
+  />
+
